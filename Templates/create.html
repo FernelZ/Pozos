@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Crear Pozo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.0/dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.0/dist/sweetalert2.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="static/styles.css">
+  <style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    /* Full-width input fields */
+
+    /* Set a style for all buttons */
+    button {
+      background-color: #04AA6D;
+      color: white;
+      padding: 10px 20px;
+      margin: 8px 0;
+      border: none;
+      cursor: pointer;
+      width: 5%;
+    }
+    button:hover {
+      opacity: 0.8;
+    }
+    
+    .list-container {
+        display: inline-block;
+      }
+      .button-container {
+        display: inline-block;
+        vertical-align: top;
+      }
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+      width: auto;
+      padding: 10px 18px;
+      background-color: #f44336;
+    }
+    
+    .container {
+      padding: 10px;
+    }
+
+    .table-container {
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    table {
+margin: 0 auto;
+text-align: center;
+}
+
+td, th {
+text-align: center;
+}
+
+.table td, .table th {
+padding: 0.15rem 4.5rem; /* adjust the values as needed */
+}
+
+h3 {
+display: inline-block;
+/* background-color: #04aaaa; */
+padding: 10px 20px;
+margin: 4px 0;
+border: none;
+width: auto;
+}
+    </style>
+</head>
+<body>
+  <form method="post" action="{{ url_for('upload') }}" enctype="multipart/form-data">
+    <fieldset >
+
+        <label for="name">Nombre Pozo:</label>
+        <input type="text" name="txtNombrePozo" id="txtNombrePozo" required>
+        <br>
+        <label for="Fecha">Fecha inspección:</label>
+        <input type="date" name="txtFecha" id="txtFecha" required>
+        <br>
+        <label for="Cluster">Cluster:</label>
+        <input type="text" name="txtNombreCluster" id="txtNombreCluster" required>
+        <br>
+        <label for="Cluster">Ruta:</label>
+        <input type="text" name="txtNombreFrancia" id="txtNombreFrancia" required>
+        <br>
+    <table height="300" border="1" width="500" height="300" border="1" width="500" class="tg" >
+        <thead>
+          <tr><title>aas</title>
+            <th class="tg-0lax">CLASE</th>
+            <th class="tg-0lax">ID</th>
+            <th class="tg-0lax">TAREA</th>
+            <th class="tg-0lax">RANGO</th>
+            <th class="tg-0lax">COMENTARIO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>INTEGRIDAD</td>
+            <td>1</td>
+            <td>Reportar Anomalías de integridad del pozo</td>
+            <td><input type="text" name="txtid1" id="txtid1" required></td>
+                <td><input type="text" name="txtcid1" id="txtcid1"></td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>2</td>
+                <td>Reportar Perdida de contención</td>
+                <td><input type="text" name="txtid2" id="txtid2" required></td>
+                <td><input type="text" name="txtcid2" id="txtcid2"></td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>3</td>
+                <td>Reportar existencia Fuga de gas</td>
+                <td><input type="text" name="txtid3" id="txtid3" required></td>
+                <td><input type="text" name="txtcid3" id="txtcid3"></td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>4</td>
+                <td>Medir concentraciones de LEL </td>
+                <td><input type="text" name="txtid4" id="txtid4" required></td>
+                <td><input type="text" name="txtcid4" id="txtcid4"></td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>5</td>
+                <td>Reportar  Fuga de Liquido</td>
+                <td><input type="text" name="txtid5" id="txtid5" required></td>
+                <td><input type="text" name="txtcid5" id="txtcid5"></td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>6</td>
+                <td>Reportar  Tipo de liquido de la fuga </td>
+                <td><input type="text" name="txtid6" id="txtid6" required></td>
+                <td><input type="text" name="txtcid6" id="txtcid6"></td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>7</td>
+                <td>Reportar sitio afloramiento (emanación gas o fluido liquido) </td>
+                <td><input type="text" name="txtid7" id="txtid7" required></td>
+                <td><input type="text" name="txtcid7" id="txtcid7"></td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>8</td>
+                <td>Reportar  Burbujeo en contrapozo</td>
+                <td><input type="text" name="txtid8" id="txtid8" required></td>
+                <td><input type="text" name="txtcid8" id="txtcid8"></td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>20</td>
+                <td>Reportar  Cambios en verticalidad de la cabeza de pozo</td>
+                <td><input type="text" name="txtid20" id="txtid20" required></td>
+                <td><input type="text" name="txtcid20" id="txtcid20"></td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>41</td>
+                <td>Verificar Existencia Placa de abandono</td>
+                <td><input type="text" name="txtid41" id="txtid41" required></td>
+                <td><input type="text" name="txtcid41" id="txtcid41"></td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>42</td>
+                <td>Verificar progreso de la recuperación ambiental</td>
+                <td><input type="text" name="txtid42" id="txtid42" required></td>
+                <td><input type="text" name="txtcid42" id="txtcid42"></td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>45</td>
+                <td>Reportar  Estado de la locación
+                </td>
+                <td><input type="text" name="txtid45" id="txtid45" required></td>
+                <td><input type="text" name="txtcid45" id="txtcid45"></td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>46</td>
+                <td>Reportar  Estado de vía de acceso al pozo</td>
+                <td><input type="text" name="txtid46" id="txtid46" required></td>
+                <td><input type="text" name="txtcid46" id="txtcid46"></td>
+              </tr>
+              <tr>
+                <td>HSE</td>
+                <td>104</td>
+                <td>Reportar si el pozo esta dentro de vegetación/ cultivos </td>
+                <td><input type="text" name="txtid104" id="txtid104" required></td>
+                <td><input type="text" name="txtcid104" id="txtcid104"></td>
+              </tr>
+              <tr>
+                <td>HSE</td>
+                <td>105</td>
+                <td>Reportar  si el pozo esta en medio de presencia de animales</td>
+                <td><input type="text" name="txtid105" id="txtid105" required></td>
+                <td><input type="text" name="txtcid105" id="txtcid105"></td>
+              </tr>
+              <tr>
+                <td>HSE</td>
+                <td>108</td>
+                <td>Reportar  Presencia de elementos extraños en el área</td>
+                <td><input type="text" name="txtid108" id="txtid108" required></td>
+                <td><input type="text" name="txtcid108" id="txtcid108"></td>
+              </tr>
+              <tr>
+                <td>HSE</td>
+                <td>109</td>
+                <td>Reportar  Tipo de elemento extraño en contrapozo</td>
+                <td><input type="text" name="txtid109" id="txtid109" required></td>
+                <td><input type="text" name="txtcid109" id="txtcid109"></td>
+              </tr>
+            </tbody>
+            </table>
+            <label for="Monumento">Monumento/Placa:</label>
+  <input type="file" name="txtFotoMonumento1" id="txtFotoMonumento1" required>
+  <label for="Locación">Locación:</label>
+  <input type="file" name="txtFotoLocacion1" id="txtLocacion1" required>
+  <br>
+  <label for="Monumento2">Monumento/Placa:</label>
+  <input type="file" name="txtFotoMonumento2" id="txtFotoMonumento2">
+  <label for="Locación2">Locación:</label>
+  <input type="file" name="txtFotoLocacion2" id="txtLocacion2">
+  <input type="hidden" id="overwrite" name="overwrite" value="false">
+  <br>
+  <input type="submit" value="Upload">
+  </fieldset></form>
+  <form>
+    <button type="submit" formaction="/logeado">Volver</button>
+</form>
+  <!-- <input type="submit" value="Upload" onsubmit="return confirmOverwrite()"></fieldset></form> -->
+  <!-- <script>
+    function confirmOverwrite() {
+        if (confirm("A file with the same name already exists. Do you want to overwrite it?")) {
+            document.getElementById("overwrite").value = "true";
+            return true;
+          } else {
+            return false;
+        }
+    }
+</script> -->
+    </body>
+  </html>

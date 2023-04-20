@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        /* Full-width input fields */
+
+        /* Set a style for all buttons */
+        button {
+          background-color: #04AA6D;
+          color: white;
+          padding: 10px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 5%;
+        }
+        button:hover {
+          opacity: 0.8;
+        }
+        
+        .list-container {
+            display: inline-block;
+          }
+          .button-container {
+            display: inline-block;
+            vertical-align: top;
+          }
+        /* Extra styles for the cancel button */
+        .cancelbtn {
+          width: auto;
+          padding: 10px 18px;
+          background-color: #f44336;
+        }
+        
+        .container {
+          padding: 10px;
+        }
+
+        .table-container {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        table {
+    margin: 0 auto;
+    text-align: center;
+    }
+
+    td, th {
+    text-align: center;
+    }
+
+    .table td, .table th {
+    padding: 0.1rem 1rem; /* adjust the values as needed */
+}
+
+h3 {
+  display: inline-block;
+  /* background-color: #04aaaa; */
+  padding: 10px 20px;
+  margin: 4px 0;
+  border: none;
+  width: auto;
+}
+
+.float-right {
+        float: right;
+    }
+    .mt-3 {
+        margin-top: 1rem;
+    }
+.tg {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+.tg td {
+  border-color:black;
+  border-style:solid;
+  border-width:0.5px;
+  font-family:Arial, sans-serif;
+  font-size:10px;
+  overflow:hidden;
+  padding:0.1px 0.1px;
+  word-break:normal;
+}
+.tg th {
+  border-color:black;
+  border-style:solid;
+  border-width:0.5px;
+  font-family:Arial, sans-serif;
+  font-size:10px;
+  font-weight:normal;
+  overflow:hidden;
+  padding:0.1px 0.1px;
+  word-break:normal;
+}
+.tg .tg-0lax {
+  text-align:left;
+  vertical-align:top;
+}
+        </style>
+</head>
+<body>
+    <div style="display: flex; justify-content: space-between;">
+        <h1 style="margin: 0 auto; margin-bottom: 40px;">Seguimiento Pozos abandonados</h1>
+      </div>
+      <h3 class="button-style">{{ row[1]}}</h3>
+      <!-- <h3 class="button-style">Año: {{ row[1][-4:] }}</h3> -->
+      <h3 class="button-style">{{ row[3] }}</h3>
+      <h3 class="button-style">Cluster {{ row[2] }}</h3>
+      <h3 class="button-style"> {{ row[0] }}</h3>
+      <!-- <h3 class="button-style">Fecha: {{ row[1]}}</h3>
+      <!-- <h3 class="button-style">Año: {{ row[1][-4:] }}</h3> -->
+      <!-- <h3 class="button-style">Ruta: {{ row[3] }}</h3>
+      <h3 class="button-style"> {{ row[0] }}</h3> --> 
+      <div class="table-container">
+        <table height="300" border="1" width="500" height="300" border="1" width="500" class="tg" >
+        <thead class="thead-dark">
+            <tr>
+                <th>Clase</th>
+                <th>ID</th>
+                <th>TAREA</th>
+                <th>RANGO</th>
+                <th>COMENTARIO</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>INTEGRIDAD</td>
+            <td>1</td>
+            <td>Reportar Anomalías de integridad del pozo</td>
+            <td>{{ row[4]}}</td>
+            <td>{{ row[5]}}</td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>2</td>
+                <td>Reportar Perdida de contención</td>
+                <td>{{ row[6]}}</td>
+                <td>{{ row[7]}}</td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>3</td>
+                <td>Reportar existencia Fuga de gas</td>
+                <td>{{ row[8]}}</td>
+                <td>{{ row[9]}}</td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>4</td>
+                <td>Medir concentraciones de LEL </td>
+                <td>{{ row[10]}}</td>
+                <td>{{ row[11]}}</td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>5</td>
+                <td>Reportar  Fuga de Liquido</td>
+                <td>{{ row[12]}}</td>
+                <td>{{ row[13]}}</td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>6</td>
+                <td>Reportar  Tipo de liquido de la fuga </td>
+                <td>{{ row[14]}}</td>
+                <td>{{ row[15]}}</td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>7</td>
+                <td>Reportar sitio afloramiento (emanación gas o fluido liquido) </td>
+                <td>{{ row[16]}}</td>
+                <td>{{ row[17]}}</td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>8</td>
+                <td>Reportar  Burbujeo en contrapozo</td>
+                <td>{{ row[18]}}</td>
+                <td>{{ row[19]}}</td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>20</td>
+                <td>Reportar  Cambios en verticalidad de la cabeza de pozo</td>
+                <td>{{ row[20]}}</td>
+                <td>{{ row[21]}}</td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>41</td>
+                <td>Verificar Existencia Placa de abandono</td>
+                <td>{{ row[22]}}</td>
+                <td>{{ row[23]}}</td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>42</td>
+                <td>Verificar progreso de la recuperación ambiental</td>
+                <td>{{ row[24]}}</td>
+                <td>{{ row[25]}}</td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>45</td>
+                <td>Reportar  Estado de la locación
+                </td>
+                <td>{{ row[26]}}</td>
+                <td>{{ row[27]}}</td>
+              </tr>
+              <tr>
+                <td>INTEGRIDAD</td>
+                <td>46</td>
+                <td>Reportar  Estado de vía de acceso al pozo</td>
+                <td>{{ row[28]}}</td>
+                <td>{{ row[29]}}</td>
+              </tr>
+              <tr>
+                <td>HSE</td>
+                <td>104</td>
+                <td>Reportar si el pozo esta dentro de vegetación/ cultivos </td>
+                <td>{{ row[30]}}</td>
+                <td>{{ row[31]}}</td>
+              </tr>
+              <tr>
+                <td>HSE</td>
+                <td>105</td>
+                <td>Reportar  si el pozo esta en medio de presencia de animales</td>
+                <td>{{ row[32]}}</td>
+                <td>{{ row[33]}}</td>
+              </tr>
+              <tr>
+                <td>HSE</td>
+                <td>108</td>
+                <td>Reportar  Presencia de elementos extraños en el área</td>
+                <td>{{ row[34]}}</td>
+                <td>{{ row[35]}}</td>
+              </tr>
+              <tr>
+                <td>HSE</td>
+                <td>109</td>
+                <td>Reportar  Tipo de elemento extraño en contrapozo</td>
+                <td>{{ row[36]}}</td>
+                <td>{{ row[37]}}</td>
+              </tr>
+        </tbody>
+    </table></div> 
+    <br>
+    <form action="{{ url_for('inicio') }}" method="get">
+      <h3 class="button-style">Locacion</h3>
+      <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+          {% for locacion_image in locacion_images %}
+              <img class="img-thumbnail" width="300" height="300" src="{{ url_for('uploads', nombreFoto=locacion_image) }}?v={{ image_version }}" alt="">
+          {% endfor %}
+      </div>
+      <h3 class="button-style">Monumento</h3>
+        <div class="col-md-6 text-center">
+            {% for monumento_image in monumento_images %}
+                <img class="img-thumbnail" width="300" height="300" src="{{ url_for('uploads', nombreFoto=monumento_image) }}?v={{ image_version }}" alt="">
+            {% endfor %}
+      </div>
+      <button type="submit" formaction="/inicio" class="btn btn-primary btn-sm mt-3" style="display: block;">Volver</button>
+    </form>
+</body>
+</html>

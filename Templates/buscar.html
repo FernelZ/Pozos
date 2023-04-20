@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        /* Full-width input fields */
+
+        /* Set a style for all buttons */
+        button {
+          background-color: #04AA6D;
+          color: white;
+          padding: 10px 20px;
+          margin: 8px 0;
+          border: none;
+          cursor: pointer;
+          width: 5%;
+        }
+        button:hover {
+          opacity: 0.8;
+        }
+        
+        .list-container {
+            display: inline-block;
+          }
+          .button-container {
+            display: inline-block;
+            vertical-align: top;
+          }
+        /* Extra styles for the cancel button */
+        .cancelbtn {
+          width: auto;
+          padding: 10px 18px;
+          background-color: #f44336;
+        }
+        
+        .container {
+          padding: 10px;
+        }
+
+        .table-container {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        table {
+    margin: 0 auto;
+    text-align: center;
+    }
+
+    td, th {
+    text-align: center;
+    }
+
+    .table td, .table th {
+    padding: 0.15rem 4.5rem; /* adjust the values as needed */
+}
+
+h3 {
+  display: inline-block;
+  /* background-color: #04aaaa; */
+  padding: 10px 20px;
+  margin: 4px 0;
+  border: none;
+  width: auto;
+}
+        </style>
+</head>
+<body>
+    <div style="display: flex; justify-content: space-between;">
+        <h1 style="margin: 0 auto; margin-bottom: 40px;">Seguimiento Pozos abandonados</h1>
+      </div>
+      <!-- <h2>Año: {{ filtered_data[0][1][-4:] }}&nbsp; Ruta {{ filtered_data[0][3] }}</h2>
+      <h2>Año {{ filtered_data[0][1][-4:] }}&nbsp; Ruta: {{ filtered_data[0][3] }}</h2> -->
+      <!-- <h2>Año: {{ filtered_data[0][1][-4:] }}</h2>
+      <h2>Ruta: {{ filtered_data[0][3] }}</h2> -->
+      <h3 class="button-style">Año: {{ filtered_data[0][1][-4:] }}</h3>
+      <h3 class="button-style">Ruta: {{ filtered_data[0][3] }}</h3>
+      <div class="table-container">
+    <table class="table table-dark">
+        <thead class="thead-dark">
+            <tr>
+                <!-- <th>Ruta</th> -->
+                <th>Cluster</th>
+                <th>Pozo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pozo in filtered_data  %}
+            <tr>
+                <!-- <td>{{ pozo[3] }}</td> -->
+                <td>{{ pozo[2] }}</td>
+                <td>{{ pozo[0] }}</td>
+                <td><a href="/view/{{pozo[0]}}">Ver</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table></div>
+    <form action="{{ url_for('inicio') }}" method="get">
+        <button type="submit" formaction="/inicio">Volver</button>
+    </form>
+</body>
+</html>
