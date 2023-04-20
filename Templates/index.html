@@ -172,35 +172,47 @@ span.psw {
     <div style="display: flex; justify-content: space-between;">
         <h1 style="margin: 0 auto;">Seguimiento Pozos abandonados</h1>
         <div style="text-align: right;">
-          <form>
-          <button class="button" formaction="/index">Cerrar Sesión</button></form>
+          <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
         </div>
       </div>
       <!-- <img src="LogoECP.PNG" width="500" height="333"> -->
       <div class="logo-container">
-        <img src="https://i.ibb.co/jy5gS8B/LogoECP.png" alt="LogoECP" border="0">
+        <img src="{{ url_for('uploads', nombreFoto='LogoECP.PNG') }}?v={}" alt="LogoECP" border="0">
         <!-- <img src="LogoECP.PNG" alt="LogoECP" border="0">     -->
       </div>
 
-      <form class="modal-content animate" action="/logeado" method="post">
+      <form class="modal-content animate" action="/login" method="post">
         <div class="container2" style="text-align: center;">
           <br>
       <label for="options">Seleccione el año:</label>
-<select id="year2" name="year2">
-  {% for year2 in Data_Year %}
-    <option value="{{ year2 }}">{{ year2 }}</option>
+<select id="year" name="year">
+  {% for year in Data_Year %}
+    <option value="{{ year }}">{{ year }}</option>
   {% endfor %}</select>
   <label for="options location">Seleccione la Ruta:</label>
-<select id="location2" name="location2">
-  {% for location2 in Data_Location %}
-    <option value="{{ location2 }}">{{ location2 }}</option>
+<select id="location" name="location">
+  {% for location in Data_Location %}
+    <option value="{{ location }}">{{ location }}</option>
   {% endfor %}</select>
   <br>
-  <button class="button2" formaction="/buscar2">Buscar Pozo</button><br>
-  <button class="button2" formaction="/create">Crear Pozo</button><br>
+  <button class="button2" formaction="/buscar">Buscar Pozo</button><br>
 </div></form>
 <!-- <div id="infoBox">
 </div> -->
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/logeado" method="post">
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+      <!-- <input type="submit" value="Login"> -->
+      <button type="submit">Login</button>
+      <!-- <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label> -->
+    </div></form>
 <!-- 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
