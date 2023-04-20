@@ -19,8 +19,8 @@ def uploads(nombreFoto):
 
     return send_from_directory(app.config['UPLOAD_FOLDER'],nombreFoto)
 
-@app.route('/inicio', methods=['GET', 'POST'])
-def inicio():
+@app.route('/index', methods=['GET', 'POST'])
+def index():
     global Data_Pozos2
     global Data_Year
     global Data_Location
@@ -54,7 +54,7 @@ def inicio():
     unique_years = sorted(unique_years)
     unique_location = list(set(Data_Location))
     unique_location = sorted(unique_location, key=lambda x: int(x.split(" ")[1]))
-    return render_template('inicio.html', Data_Pozos2=Data_Pozos2, Data_Year=unique_years
+    return render_template('index.html', Data_Pozos2=Data_Pozos2, Data_Year=unique_years
     , Data_Location=unique_location)
 
 @app.route('/logeado', methods=['GET', 'POST'])
@@ -104,7 +104,7 @@ def login():
     if username in USERS and USERS[username] == password:
         return render_template('logeado.html')
     else:
-        return render_template('inicio.html', error='Incorrect username or password')
+        return render_template('index.html', error='Incorrect username or password')
 
 @app.route('/create', methods=['GET', 'POST'])
 def create():
